@@ -11,7 +11,7 @@ float *CriaMatrizV(int l, int c){
 	if(MatrizV != NULL){
 		for(i = 0; i < l; i++){
 			for(j = 0; j < c;j++){
-				MatrizV[k*i+j] = rand()%20;
+				MatrizV[k*i+j] = rand()%10;
 		
 			}
 			
@@ -20,11 +20,29 @@ float *CriaMatrizV(int l, int c){
 	}
 	return NULL;
 }
+float *Transposta(int m, int n, float *MatrizV){
+	float *MatrizVtrans;
+	int i, j;
+	int k = m;
+	if(k < n){
+		k = n;
+	}
+	MatrizVtrans = (float*)malloc(m*n*sizeof(float));
+	if(MatrizVtrans != NULL){
+		for(i = 0;i < n; i++){
+			for(j = 0;j < m; j++){
+				MatrizVtrans[k*i+j] = MatrizV[k*j+i];
+			}
+		}
+		return MatrizVtrans;	
+	}
+	return NULL;
+}
 
 
 int main(){
 	float *MaV, *MbV;
-	int n = 5 ,m = 2 ,p = 2,q = 5;
+	int n = 3 ,m = 3 ,p = 2,q = 2;
 	int i , j;
 	int k, x;
 	k = m;
