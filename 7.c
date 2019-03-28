@@ -23,7 +23,7 @@ float *CriaMatrizV(int l, int c){
 float *Transposta(int m, int n, float *MatrizV){
 	float *MatrizVtrans;
 	int i, j;
-	int k = m;
+	int k = m; 
 	if(k < n){
 		k = n;
 	}
@@ -38,7 +38,11 @@ float *Transposta(int m, int n, float *MatrizV){
 	}
 	return NULL;
 }
-
+float *MultABT(int n, int m, int p, int q, float *Vma, float *Vmb){//Mc = Ma * MbTransposta
+	float *Mc;
+	int LinhasMc,ColunasMc;
+	
+}
 
 int main(){
 	float *MaV, *MbV;
